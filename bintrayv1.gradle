@@ -9,6 +9,7 @@ if (project.hasProperty("android")) { // Android libraries
     }
 
     task javadoc(type: Javadoc) {
+		options.encoding = "utf-8"
         source = android.sourceSets.main.java.srcDirs
         classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
     }
@@ -49,11 +50,11 @@ bintray {
         publicDownloadNumbers = true
         version {
             desc = libraryDescription
-            gpg {
-                sign = true //Determines whether to GPG sign the files. The default is false
-                passphrase = properties.getProperty("bintray.gpg.password")
+            //gpg {
+                //sign = true //Determines whether to GPG sign the files. The default is false
+                //passphrase = properties.getProperty("bintray.gpg.password")
                 //Optional. The passphrase for GPG signing'
-            }
+            //}
         }
     }
 }
