@@ -9,7 +9,7 @@ install {
             project {
                 packaging 'jar'
                 groupId publishedGroupId
-                artifactId artifact
+                artifactId artifactId
 
                 // Add your description here
                 name libraryName
